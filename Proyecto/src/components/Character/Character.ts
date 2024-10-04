@@ -1,3 +1,5 @@
+import styles from "./Character.css"
+
 export enum Attribute {
     "image" = "image",
     "name" = "name",
@@ -5,7 +7,7 @@ export enum Attribute {
     "species" = "species",
     "type" = "type",
     "origin" = "origin",
-    "nameoffirstepisode" = "nameoffirstepisode",
+    "episode" = "episode",
 };
 
 class CardCharacter extends HTMLElement {
@@ -15,7 +17,7 @@ class CardCharacter extends HTMLElement {
     species? : string;
     type? : string;
     origin? : string;
-    nameoffirstepisode? : string;
+    episode? : string;
 
     static get observedAttributes(){
         return Object.keys(Attribute);
@@ -41,6 +43,7 @@ class CardCharacter extends HTMLElement {
     render(){
         if(this.shadowRoot){
             this.shadowRoot.innerHTML = `
+            <style>${styles}</style>
             <section>
                 <img src="${this.image}">
                 <h2>${this.name}</h2>
@@ -48,7 +51,7 @@ class CardCharacter extends HTMLElement {
                 <p>${this.species}</p>
                 <h5>${this.type}</h5>
                 <h5>${this.origin}</h5>
-                <h2>${this.nameoffirstepisode}</h2>
+                <h2>${this.episode}</h2>
             </section>
             `;
         };

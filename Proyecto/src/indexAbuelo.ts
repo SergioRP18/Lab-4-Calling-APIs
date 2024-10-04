@@ -84,7 +84,7 @@ class AppContainer extends HTMLElement {
                 card.setAttribute(Attribute.species, character.species);
                 card.setAttribute(Attribute.type, character.type);
                 card.setAttribute(Attribute.origin, character.origin.name);
-                card.setAttribute(Attribute.nameoffirstepisode, character.nameoffirstepisode.episode || "N/A"); // Manejo de posibles errores
+                card.setAttribute(Attribute.episode, character.episode || "N/A"); // Manejo de posibles errores
 
                 if (this.shadowRoot) {
                     this.shadowRoot.appendChild(card);
